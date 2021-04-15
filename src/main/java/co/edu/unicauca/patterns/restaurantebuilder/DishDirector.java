@@ -9,21 +9,21 @@ package co.edu.unicauca.patterns.restaurantebuilder;
  *
  * @author Beca98
  */
-public class Director {
+public class DishDirector {
 
-    private DishBuilder builder;
+    private DishBuilder dishbuilder;
 
-    public Director setBuilder(DishBuilder builder) {
-        this.builder = builder;
+    public DishDirector setDishBuilder(DishBuilder builder) {
+        this.dishbuilder = builder;
         return this;
     }
 
     public Dish getDish() {
-        return builder.getDish();
+        return dishbuilder.getDish();
     }
 
-    public void create() {
-        builder
+    public void buildDish() {
+        dishbuilder
                 .init()
                 .setCore()
                 .addParts()

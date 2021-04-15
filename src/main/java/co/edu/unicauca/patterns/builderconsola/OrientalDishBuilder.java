@@ -28,14 +28,5 @@ public class OrientalDishBuilder extends DishBuilder {
     public DishBuilder setSize() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    @Override
-    public Dish getDish() {
-        return dish;
-    }
 
-    @Override
-    public void setDish(Dish dish) {
-        this.dish = dish;
-    }
 }

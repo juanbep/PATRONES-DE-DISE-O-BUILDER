@@ -5,7 +5,7 @@
  */
 package co.edu.unicauca.patterns.builderconsola;
 
-import co.edu.unicauca.patterns.restaurantebuilder.Director;
+import co.edu.unicauca.patterns.restaurantebuilder.DishDirector;
 import co.edu.unicauca.patterns.restaurantebuilder.Dish;
 
 /**
@@ -20,10 +20,10 @@ public class DishGenerator {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Director director = new Director(); 
+        DishDirector director = new DishDirector(); 
         OrientalDishBuilder odb = new OrientalDishBuilder();
-        director.setBuilder(odb);
-        director.create();
+        director.setDishBuilder(odb);
+        director.buildDish();
         
         Dish dish = director.getDish();
         System.out.println("Oriental Dish: " + dish);
