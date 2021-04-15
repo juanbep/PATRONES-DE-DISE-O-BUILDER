@@ -21,7 +21,7 @@ public class DishGenerator {
         // TODO code application logic here
         
         Director director = new Director(); 
-        DishBuilder odb = new OrientalDishBuilder();
+        OrientalDishBuilder odb = new OrientalDishBuilder();
         director.setBuilder(odb);
         director.create();
         

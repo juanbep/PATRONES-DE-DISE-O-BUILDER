@@ -9,7 +9,7 @@ package co.edu.unicauca.patterns.restaurantebuilder;
  *
  * @author Beca98
  */
-public abstract class Builder {
+public abstract class DishBuilder {
 
     protected Dish dish;
 
@@ -21,15 +21,15 @@ public abstract class Builder {
         this.dish = dish;
     }
 
-    public Builder init() {
+    public DishBuilder init() {
         this.dish = new Dish();
         return this;
     }
 
-    public abstract Builder setCore();
+    public abstract DishBuilder setCore();
 
-    public abstract Builder addParts();
+    public abstract DishBuilder addParts();
 
-    public abstract Builder setSize();
+    public abstract DishBuilder setSize();
 
 }

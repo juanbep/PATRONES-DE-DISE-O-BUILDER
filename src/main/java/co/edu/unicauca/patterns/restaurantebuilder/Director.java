@@ -11,9 +11,9 @@ package co.edu.unicauca.patterns.restaurantebuilder;
  */
 public class Director {
 
-    private Builder builder;
+    private DishBuilder builder;
 
-    public Director setBuilder(Builder builder) {
+    public Director setBuilder(DishBuilder builder) {
         this.builder = builder;
         return this;
     }

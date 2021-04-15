@@ -5,7 +5,8 @@
  */
 package co.edu.unicauca.patterns.builderconsola;
 
-import co.edu.unicauca.patterns.restaurantebuilder.Builder;
+import co.edu.unicauca.patterns.restaurantebuilder.DishBuilder;
+import co.edu.unicauca.patterns.restaurantebuilder.Dish;
 
 /**
  *
@@ -14,18 +15,27 @@ import co.edu.unicauca.patterns.restaurantebuilder.Builder;
 public class OrientalDishBuilder extends DishBuilder {
 
     @Override
-    public Builder setCore() {
+    public DishBuilder setCore() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Builder addParts() {
+    public DishBuilder addParts() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Builder setSize() {
+    public DishBuilder setSize() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    @Override
+    public Dish getDish() {
+        return dish;
+    }
 
+    @Override
+    public void setDish(Dish dish) {
+        this.dish = dish;
+    }
 }
