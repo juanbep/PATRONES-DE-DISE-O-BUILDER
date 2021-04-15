@@ -5,8 +5,6 @@
  */
 package co.edu.unicauca.patterns.restaurantebuilder;
 
-import java.util.List;
-
 /**
  *
  * @author Beca98
@@ -14,11 +12,6 @@ import java.util.List;
 public class OrientalDish extends Dish {
 
     private String orientalName;
-
-    public OrientalDish(String orientalName, String name, String description, String image, int price, EnumSize size, List<Dish> parts) {
-        super(name, description, image, price, size, parts);
-        this.orientalName = orientalName;
-    }
 
     public String getOrientalName() {
         return orientalName;

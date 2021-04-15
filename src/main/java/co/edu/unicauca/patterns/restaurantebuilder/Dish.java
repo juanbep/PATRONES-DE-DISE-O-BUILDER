@@ -5,7 +5,6 @@
  */
 package co.edu.unicauca.patterns.restaurantebuilder;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,28 +20,11 @@ public class Dish {
     private EnumSize size;
     private List<Dish> parts;
 
-    public Dish() {
+    public double calculatePriceParts() {
 
+        return price;
     }
 
-    public Dish(String name, String description, String image, int price, EnumSize size, List<Dish> parts) {
-        this.name = name;
-        this.description = description;
-        this.image = image;
-        this.price = price;
-        this.size = size;
-        this.parts = new ArrayList();
-    }
-
-    
-    
-    public double calculatePriceParts(){
-    
-        
-        
-        return price; 
-    }
-    
     public String getName() {
         return name;
     }
@@ -90,5 +72,5 @@ public class Dish {
     public void setParts(List<Dish> parts) {
         this.parts = parts;
     }
-
+    
 }
