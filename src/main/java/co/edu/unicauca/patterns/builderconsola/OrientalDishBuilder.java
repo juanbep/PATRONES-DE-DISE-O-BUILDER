@@ -5,13 +5,27 @@
  */
 package co.edu.unicauca.patterns.builderconsola;
 
-
+import co.edu.unicauca.patterns.restaurantebuilder.Builder;
 
 /**
  *
  * @author Beca98
  */
-public class OrientalDishBuilder {
+public class OrientalDishBuilder extends DishBuilder {
 
-    
+    @Override
+    public Builder setCore() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Builder addParts() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Builder setSize() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

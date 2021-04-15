@@ -5,17 +5,28 @@
  */
 package co.edu.unicauca.patterns.builderconsola;
 
+import co.edu.unicauca.patterns.restaurantebuilder.Director;
+
 /**
  *
  * @author Beca98
  */
-public class ClientGenerator {
+public class DishGenerator {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        Director director = new Director(); 
+        DishBuilder db = new DishBuilder();
+        
+        
+        
+        
+        
+        
     }
     
 }

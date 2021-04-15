@@ -10,5 +10,23 @@ package co.edu.unicauca.patterns.restaurantebuilder;
  * @author Beca98
  */
 public class Director {
-    
+
+    private Builder builder;
+
+    public Director setBuilder(Builder builder) {
+        this.builder = builder;
+        return this;
+    }
+
+    public Dish getDish() {
+        return builder.getDish();
+    }
+
+    public void create() {
+        builder
+                .init()
+                .addParts()
+                .setCore()
+                .setSize();
+    }
 }
