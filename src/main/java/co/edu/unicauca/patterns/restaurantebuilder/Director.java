@@ -25,8 +25,8 @@ public class Director {
     public void create() {
         builder
                 .init()
-                .addParts()
                 .setCore()
+                .addParts()
                 .setSize();
     }
 }
