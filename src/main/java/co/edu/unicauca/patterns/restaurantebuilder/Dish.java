@@ -16,11 +16,11 @@ public class Dish {
     private String name;
     private String description;
     private String image;
-    private double price;
+    private int price;
     private EnumSize size;
     private List<Dish> parts;
 
-    public double calculatePriceParts() {
+    public int calculatePriceParts() {
 
         return price;
     }
@@ -49,7 +49,7 @@ public class Dish {
         this.image = image;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
@@ -72,5 +72,5 @@ public class Dish {
     public void setParts(List<Dish> parts) {
         this.parts = parts;
     }
-    
+
 }

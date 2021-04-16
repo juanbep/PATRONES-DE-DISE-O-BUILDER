@@ -6,6 +6,10 @@
 package co.edu.unicauca.patterns.builderconsola;
 
 import co.edu.unicauca.patterns.restaurantebuilder.DishBuilder;
+import co.edu.unicauca.patterns.restaurantebuilder.EnumSize;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  *
@@ -13,9 +17,17 @@ import co.edu.unicauca.patterns.restaurantebuilder.DishBuilder;
  */
 public class OrientalDishBuilder extends DishBuilder {
 
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
     @Override
     public DishBuilder setCore() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        dish.setName(read("Ingrese el nombre del plato oriental: "));
+        dish.setDescription(read("Ingrese la descripcion del plato oriental: "));
+        dish.setImage(read("Ingrese una imagen para el plato oriental(URL de la imagen)"));
+        dish.setPrice(readPrice("Ingrese el valor del plato: "));
+
+        return this;
     }
 
     @Override
@@ -25,7 +37,43 @@ public class OrientalDishBuilder extends DishBuilder {
 
     @Override
     public DishBuilder setSize() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        dish.setSize(readEnumSize("Ingrese el tamaño del plato: /n"
+                + "1. ALL /n"
+                + "2. HALF"));
+        return this;
+    }
+
+    private String read(String message) {
+        String input = "";
+        try {
+            System.out.println(message);
+            input = br.readLine();
+        } catch (IOException e) {
+        }
+        return input;
+    }
+
+    private int readPrice(String message) {
+        int input = 0;
+        try {
+            System.out.println(message);
+            input = br.read();
+        } catch (IOException e) {
+        }
+        return input;
+    }
+
+    private EnumSize readEnumSize(String message) {
+        String input = "";
+        try {
+            System.out.println(message);
+            input = br.readLine();
+            if ("1".equals(input)) {
+                return EnumSize.ALL;
+            }
+        } catch (IOException e) {
+        }
+        return EnumSize.HALF;
     }
 
 }
