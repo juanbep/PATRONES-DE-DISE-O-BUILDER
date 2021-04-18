@@ -26,10 +26,10 @@ public class OrientalDishBuilder extends DishBuilder {
     public DishBuilder setCore() {
 
         dish.setName(read("Ingrese el nombre del plato oriental: "));
-        dish.setDescription(read("Ingrese la descripcion del plato oriental: "));
-        dish.setImage(read("Ingrese una imagen para el plato oriental(URL de la imagen)"));
-        dish.setPrice(readPrice("Ingrese el valor del plato: "));
-        dish.setBase(addComponent("Ingrese la base para el plato"));
+        dish.setDescription(read("\nIngrese la descripcion del plato oriental: "));
+        dish.setImage(read("\nIngrese una imagen para el plato oriental(URL de la imagen)"));
+        dish.setPrice(readPrice("\nIngrese el valor del plato: "));
+        dish.setBase(addComponent("\nIngrese la base para el plato"));
 
         return this;
     }
@@ -37,10 +37,9 @@ public class OrientalDishBuilder extends DishBuilder {
     @Override
     public DishBuilder addParts() {
 
-        System.out.println("¿Dese agregar mas partes al plato? /n"
-                + "1. Si /n"
-                + "2. No");
-        dish.setParts(listComponents("Ingrese los componentes para el plato: "));
+        dish.setParts(listComponents("\n¿Dese agregar mas partes al plato? \n"
+                + "1. Si \n"
+                + "2. No"));
         return this;
     }
 
@@ -90,6 +89,8 @@ public class OrientalDishBuilder extends DishBuilder {
     private List<Component> listComponents(String message) {
         List<Component> listCompts = null;
         int input = 0, nPartes = 0;
+        br = null;
+        br = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.println(message);
             input = br.read();
@@ -115,13 +116,15 @@ public class OrientalDishBuilder extends DishBuilder {
         Component compt = null;
         String id, name;
         int price;
+        br = null;
+        br = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.println(message);
-            System.out.println("Ingrese un id para el componente /n");
+            System.out.println("\nIngrese un id para el componente");
             id = br.readLine();
-            System.out.println("Ingrese un nombre para el componente /n");
+            System.out.println("\nIngrese un nombre para el componente");
             name = br.readLine();
-            System.out.println("Ingrese un precio para el componente");
+            System.out.println("\nIngrese un precio para el componente");
             price = br.read();
             compt = new Component(id, name, price);
         } catch (IOException e) {
