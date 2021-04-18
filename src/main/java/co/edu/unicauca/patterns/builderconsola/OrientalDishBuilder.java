@@ -45,9 +45,9 @@ public class OrientalDishBuilder extends DishBuilder {
 
     @Override
     public DishBuilder setSize() {
-        dish.setSize(readEnumSize("Ingrese el tamaño del plato: /n"
-                + "1. ALL /n"
-                + "2. HALF"));
+        dish.setSize(readEnumSize("\nIngrese el tamaño del plato: "
+                + "\n1. ALL"
+                + "\n2. HALF"));
         return this;
     }
 
@@ -85,21 +85,19 @@ public class OrientalDishBuilder extends DishBuilder {
             System.out.println(message);
             input = br.readLine();
             resp = validar(input, message);
-            System.out.println("Ingrese el numero de partes que desea agregar: ");
-            input = br.readLine();
-            nPartes = validar(input);
+            if (resp == 1) {
+                System.out.println("Ingrese el numero de partes que desea agregar: ");
+                input = br.readLine();
+                nPartes = validar(input);
+                listCompts = new ArrayList();
+                for (int i = 0; i < nPartes; i++) {
+                    listCompts.add(addComponent("\nIngrese los datos para el componente " + (i + 1)));
+                }
+                return listCompts;
+            }
         } catch (IOException e) {
         }
-        if (resp == 1) {
-            listCompts = new ArrayList();
-            for (int i = 0; i < nPartes; i++) {
-                listCompts.add(addComponent("Ingrese los datos para el componente " + (i + 1)));
-            }
-            return listCompts;
-        } else {
-            return listCompts;
-        }
-
+        return listCompts;
     }
 
     private Component addComponent(String message) {
