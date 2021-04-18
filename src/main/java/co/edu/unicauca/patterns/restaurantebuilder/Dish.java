@@ -17,8 +17,9 @@ public class Dish {
     private String description;
     private String image;
     private int price;
+    private Component base;
+    private List<Component> parts;
     private EnumSize size;
-    private List<Dish> parts;
 
     public int calculatePriceParts() {
 
@@ -65,11 +66,19 @@ public class Dish {
         this.size = size;
     }
 
-    public List<Dish> getParts() {
+    public Component getBase() {
+        return base;
+    }
+
+    public void setBase(Component base) {
+        this.base = base;
+    }
+
+    public List<Component> getParts() {
         return parts;
     }
 
-    public void setParts(List<Dish> parts) {
+    public void setParts(List<Component> parts) {
         this.parts = parts;
     }
 
