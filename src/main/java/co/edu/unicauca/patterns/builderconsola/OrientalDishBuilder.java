@@ -28,7 +28,7 @@ public class OrientalDishBuilder extends DishBuilder {
         dish.setName(read("Ingrese el nombre del plato oriental: "));
         dish.setDescription(read("\nIngrese la descripcion del plato oriental: "));
         dish.setImage(read("\nIngrese una imagen para el plato oriental(URL de la imagen)"));
-        dish.setPrice(readPrice("\nIngrese el valor del plato: "));
+        dish.setPrice(Integer.parseInt(read("\nIngrese el valor del plato: ")));
         dish.setBase(addComponent("\nIngrese la base para el plato"));
 
         return this;
@@ -61,25 +61,16 @@ public class OrientalDishBuilder extends DishBuilder {
         return input;
     }
 
-    private int readPrice(String message) {
-        int input = 0;
-        try {
-            System.out.println(message);
-            input = br.read();
-        } catch (IOException e) {
-        }
-        return input;
-    }
-
     private EnumSize readEnumSize(String message) {
-        int input = 0;
+        String input = "";
+        int resp = 0;
         try {
             System.out.println(message);
-            input = br.read();
-            validar(input, message);
+            input = br.readLine();
+            resp = validar(input, message);
         } catch (IOException e) {
         }
-        if (input == 1) {
+        if (resp == 1) {
             return EnumSize.ALL;
         } else {
             return EnumSize.HALF;
@@ -88,19 +79,18 @@ public class OrientalDishBuilder extends DishBuilder {
 
     private List<Component> listComponents(String message) {
         List<Component> listCompts = null;
-        int input = 0, nPartes = 0;
-        br = null;
-        br = new BufferedReader(new InputStreamReader(System.in));
+        String input = "";
+        int resp = 0, nPartes = 0;
         try {
             System.out.println(message);
-            input = br.read();
-            input = validar(input, message);
+            input = br.readLine();
+            resp = validar(input, message);
             System.out.println("Ingrese el numero de partes que desea agregar: ");
-            nPartes = br.read();
-            nPartes = validar(nPartes);
+            input = br.readLine();
+            nPartes = validar(input);
         } catch (IOException e) {
         }
-        if (input == 1) {
+        if (resp == 1) {
             listCompts = new ArrayList();
             for (int i = 0; i < nPartes; i++) {
                 listCompts.add(addComponent("Ingrese los datos para el componente " + (i + 1)));
@@ -114,10 +104,8 @@ public class OrientalDishBuilder extends DishBuilder {
 
     private Component addComponent(String message) {
         Component compt = null;
-        String id, name;
-        int price;
-        br = null;
-        br = new BufferedReader(new InputStreamReader(System.in));
+        String id, name, price;
+        int priceInt;
         try {
             System.out.println(message);
             System.out.println("\nIngrese un id para el componente");
@@ -125,29 +113,36 @@ public class OrientalDishBuilder extends DishBuilder {
             System.out.println("\nIngrese un nombre para el componente");
             name = br.readLine();
             System.out.println("\nIngrese un precio para el componente");
-            price = br.read();
-            compt = new Component(id, name, price);
+            price = br.readLine();
+            priceInt = Integer.parseInt(price);
+            compt = new Component(id, name, priceInt);
         } catch (IOException e) {
         }
         return compt;
     }
 
-    private int validar(int input, String message) throws IOException {
+    private int validar(String input, String message) throws IOException {
 
-        while (input != 1 || input != 2) {
+        int num = 0;
+        num = Integer.parseInt(input);
+        while (num != 1 && num != 2) {
             System.out.println("Numero no corresponde");
             System.out.println(message);
-            input = br.read();
+            input = br.readLine();
+            num = Integer.parseInt(input);
         }
-        return input;
+        return num;
     }
 
-    private int validar(int nPartes) throws IOException {
-        while (nPartes <= 0) {
+    private int validar(String nPartes) throws IOException {
+        int num = 0;
+        num = Integer.parseInt(nPartes);
+        while (num <= 0) {
             System.out.println("Solo numeros mayores que cero");
             System.out.println("Ingrese el numero de partes que desea agregar: ");
-            nPartes = br.read();
+            nPartes = br.readLine();
+            num = Integer.parseInt(nPartes);
         }
-        return nPartes;
+        return num;
     }
 }
