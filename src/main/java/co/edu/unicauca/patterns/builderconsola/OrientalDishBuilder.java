@@ -28,7 +28,7 @@ public class OrientalDishBuilder extends DishBuilder {
         dish.setName(read("Ingrese el nombre del plato oriental: "));
         dish.setDescription(read("\nIngrese la descripcion del plato oriental: "));
         dish.setImage(read("\nIngrese una imagen para el plato oriental(URL de la imagen)"));
-        dish.setPrice(Integer.parseInt(read("\nIngrese el valor del plato: ")));
+        dish.setPrice(0);
         dish.setBase(addComponent("\nIngrese la base para el plato"));
 
         return this;
