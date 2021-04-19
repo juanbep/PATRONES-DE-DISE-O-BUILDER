@@ -19,20 +19,19 @@ public class DishGenerator {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
-        DishDirector director = new DishDirector(); 
+
+        DishDirector director = new DishDirector();
         OrientalDishBuilder odb = new OrientalDishBuilder();
         director.setDishBuilder(odb);
         director.buildDish();
-        
+
         Dish dish = director.getDish();
         System.out.println("Oriental Dish: " + dish);
-        System.out.println("Sus partes: " + dish.getParts().toString());
+        if (dish.getParts() != null) {
+            System.out.println("Sus partes: " + dish.getParts().toString());
+        }
         System.out.println("Precio de las partes: " + dish.calculatePriceParts());
-        
-        
-     
-        
+
     }
-    
+
 }
