@@ -30,7 +30,7 @@ public class DishGenerator {
         if (dish.getParts() != null) {
             System.out.println("Sus partes: " + dish.getParts().toString());
         }
-        System.out.println("Precio del plato completo: " + dish.calculatePriceDish());
+        System.out.println("Precio del plato completo: " + dish.getPrice());
 
     }
 

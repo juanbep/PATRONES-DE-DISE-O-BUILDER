@@ -27,6 +27,7 @@ public class DishDirector {
                 .init()
                 .setCore()
                 .addParts()
-                .setSize();
+                .setSize()
+                .calculatePriceDish();
     }
 }

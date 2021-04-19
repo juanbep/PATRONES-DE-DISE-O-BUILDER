@@ -28,7 +28,6 @@ public class OrientalDishBuilder extends DishBuilder {
         dish.setName(read("Ingrese el nombre del plato oriental: "));
         dish.setDescription(read("\nIngrese la descripcion del plato oriental: "));
         dish.setImage(read("\nIngrese una imagen para el plato oriental(URL de la imagen)"));
-        dish.setPrice(0);
         dish.setBase(addComponent("\nIngrese la base para el plato"));
 
         return this;
@@ -48,6 +47,23 @@ public class OrientalDishBuilder extends DishBuilder {
         dish.setSize(readEnumSize("\nIngrese el tamaño del plato: "
                 + "\n1. ALL"
                 + "\n2. HALF"));
+        return this;
+    }
+
+    @Override
+    public DishBuilder calculatePriceDish() {
+        int price = dish.getBase().getPrecio();
+        int band = price;
+        if (dish.getParts() != null) {
+            for (int i = 0; i < dish.getParts().size(); i++) {
+                price = band + dish.getParts().get(i).getPrecio();
+                band = price;
+            }
+        }
+        if (dish.getSize() == EnumSize.HALF) {
+            price = price / 2;
+        }
+        dish.setPrice(price);
         return this;
     }
 
@@ -143,4 +159,5 @@ public class OrientalDishBuilder extends DishBuilder {
         }
         return num;
     }
+
 }

@@ -21,20 +21,6 @@ public class Dish {
     private List<Component> parts;
     private EnumSize size;
 
-    public int calculatePriceDish() {
-        int band = base.getPrecio();
-        if (parts != null) {
-            for (int i = 0; i < parts.size(); i++) {
-                price = band + parts.get(i).getPrecio();
-                band = price;
-            }
-        }
-        if(size == EnumSize.HALF){
-            price = price/2;
-        }
-        return price;
-    }
-    
     public String getName() {
         return name;
     }

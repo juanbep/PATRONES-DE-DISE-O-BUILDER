@@ -31,5 +31,7 @@ public abstract class DishBuilder {
     public abstract DishBuilder addParts();
 
     public abstract DishBuilder setSize();
+    
+    public abstract DishBuilder calculatePriceDish();
 
 }
