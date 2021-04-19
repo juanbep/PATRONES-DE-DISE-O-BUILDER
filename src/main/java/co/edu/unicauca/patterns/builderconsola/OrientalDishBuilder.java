@@ -7,16 +7,12 @@ package co.edu.unicauca.patterns.builderconsola;
 
 import co.edu.unicauca.patterns.restaurantebuilder.DishBuilder;
 import co.edu.unicauca.patterns.restaurantebuilder.EnumSize;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 
 /**
  *
  * @author Beca98
  */
 public class OrientalDishBuilder extends DishBuilder {
-
-    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     @Override
     public DishBuilder setCore() {
