@@ -49,4 +49,9 @@ public class Component {
         this.precio = precio;
     }
 
+    @Override
+    public String toString() {
+        return "Component{" + "id=" + id + ", name=" + name + ", precio=" + precio + '}';
+    }
+
 }

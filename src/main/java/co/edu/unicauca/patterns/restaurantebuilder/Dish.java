@@ -82,4 +82,9 @@ public class Dish {
         this.parts = parts;
     }
 
+    @Override
+    public String toString() {
+        return "Dish{" + "name=" + name + ", description=" + description + ", image=" + image + ", price=" + price + ", base=" + base + ", size=" + size + '}';
+    }
+ 
 }
