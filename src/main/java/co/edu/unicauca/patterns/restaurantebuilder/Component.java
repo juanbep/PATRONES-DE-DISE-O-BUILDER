@@ -11,14 +11,33 @@ package co.edu.unicauca.patterns.restaurantebuilder;
  */
 public class Component {
 
+    /**
+     * Id del componente
+     */
     private String id;
+    /**
+     * nombre del componente
+     */
     private String name;
+    /**
+     * precio del componente
+     */
     private int precio;
 
+    /**
+     * Constructor por defecto
+     */
     public Component() {
 
     }
 
+    /**
+     * Constructor parametrizado
+     *
+     * @param id
+     * @param name
+     * @param precio
+     */
     public Component(String id, String name, int precio) {
         this.id = id;
         this.name = name;

@@ -13,12 +13,33 @@ import java.util.List;
  */
 public class Dish {
 
+    /**
+     * Nombre del plato
+     */
     private String name;
+    /**
+     * Descripcion del plato
+     */
     private String description;
+    /**
+     * imagen para el plato
+     */
     private String image;
+    /**
+     * precio del plato
+     */
     private int price;
+    /**
+     * componente base del plato(obligatorio)
+     */
     private Component base;
+    /**
+     * Lista de componentes adicionales para el plato
+     */
     private List<Component> parts;
+    /**
+     * tamaño del plato
+     */
     private EnumSize size;
 
     public String getName() {
