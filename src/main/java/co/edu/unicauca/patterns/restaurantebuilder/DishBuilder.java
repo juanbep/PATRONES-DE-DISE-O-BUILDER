@@ -33,12 +33,33 @@ public abstract class DishBuilder {
         return this;
     }
 
+    /**
+     * Metodo abstracto para armar la parte principal del plato.
+     *
+     * @return
+     */
     public abstract DishBuilder setCore();
 
+    /**
+     * Metodo abstracto para agregar partes extra al plato.
+     *
+     * @return
+     */
     public abstract DishBuilder addParts();
 
+    /**
+     * Metodo abstracto para agregar el tamaño del plato(ALL o HALF)
+     *
+     * @return
+     */
     public abstract DishBuilder setSize();
 
+    /**
+     * Metodo abstracto para calcular el precio del plato dependiendo del numero
+     * de partes añadidas y del tamaño del plato.
+     *
+     * @return
+     */
     public abstract DishBuilder calculatePriceDish();
 
     public String read(String message) {
@@ -51,6 +72,12 @@ public abstract class DishBuilder {
         return input;
     }
 
+    /**
+     * Este metodo permite elegir al usuario el tamaño de su plato. puede
+     * ingresar el numero 1 para tamaño ALL o el numero 2 para tamaño HALF.
+     *
+     * @return
+     */
     public EnumSize readEnumSize() {
         String input = "";
         String message = "\nIngrese el tamaño del plato: "
@@ -70,6 +97,13 @@ public abstract class DishBuilder {
         }
     }
 
+    /**
+     * Este metodo se encarga de agregar los componentes extras a un plato, el
+     * usuario puede agregar varios por lo que se guardan en una lista de
+     * componentes.
+     *
+     * @return una lista de componentes
+     */
     public List<Component> listComponents() {
         List<Component> listCompts = null;
         String input = "";
@@ -96,6 +130,12 @@ public abstract class DishBuilder {
         return listCompts;
     }
 
+    /**
+     * Este metodo se encarga de agregar un componente al plato.
+     *
+     * @param message
+     * @return un objeto de tipo componente
+     */
     public Component addComponent(String message) {
         Component compt = null;
         String id, name, price;
