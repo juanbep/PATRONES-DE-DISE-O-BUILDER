@@ -51,8 +51,11 @@ public abstract class DishBuilder {
         return input;
     }
 
-    public EnumSize readEnumSize(String message) {
+    public EnumSize readEnumSize() {
         String input = "";
+        String message = "\nIngrese el tamaño del plato: "
+                + "\n1. ALL"
+                + "\n2. HALF";
         int resp = 0;
         try {
             System.out.println(message);
@@ -67,9 +70,12 @@ public abstract class DishBuilder {
         }
     }
 
-    public List<Component> listComponents(String message) {
+    public List<Component> listComponents() {
         List<Component> listCompts = null;
         String input = "";
+        String message = "\n¿Dese agregar mas partes al plato? \n"
+                + "1. Si \n"
+                + "2. No";
         int resp = 0, nPartes = 0;
         try {
             System.out.println(message);
@@ -109,6 +115,16 @@ public abstract class DishBuilder {
         return compt;
     }
 
+    /**
+     * Este método se encarga de validar que un numero que llega por parametro
+     * corresponda a las opciones 1 o 2,1 para ALL y 2 para HALF, de lo
+     * contrario se vuelve a pedir al usuario que ingrese una opcion correcta.
+     *
+     * @param input
+     * @param message
+     * @return
+     * @throws IOException
+     */
     private int validar(String input, String message) throws IOException {
         int num = 0;
         num = Integer.parseInt(input);
@@ -121,6 +137,15 @@ public abstract class DishBuilder {
         return num;
     }
 
+    /**
+     * Este metodo se encarga de validar que el numero de componentes que el
+     * usario desea agregar al plato sea mayor que cero, de lo contrario se
+     * vuelve a pedir al usuario que ingrese un valor valido.
+     *
+     * @param nPartes
+     * @return
+     * @throws IOException
+     */
     private int validar(String nPartes) throws IOException {
         int num = 0;
         num = Integer.parseInt(nPartes);

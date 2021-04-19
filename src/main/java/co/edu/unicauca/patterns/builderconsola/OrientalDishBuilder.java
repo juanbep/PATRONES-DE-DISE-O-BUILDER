@@ -30,18 +30,14 @@ public class OrientalDishBuilder extends DishBuilder {
 
     @Override
     public DishBuilder addParts() {
-        dish.setParts(listComponents("\n¿Dese agregar mas partes al plato? \n"
-                + "1. Si \n"
-                + "2. No"));
+        dish.setParts(listComponents());
 
         return this;
     }
 
     @Override
     public DishBuilder setSize() {
-        dish.setSize(readEnumSize("\nIngrese el tamaño del plato: "
-                + "\n1. ALL"
-                + "\n2. HALF"));
+        dish.setSize(readEnumSize());
 
         return this;
     }
