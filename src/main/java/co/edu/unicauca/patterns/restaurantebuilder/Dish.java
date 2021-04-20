@@ -38,7 +38,7 @@ public class Dish {
      */
     private List<Component> parts;
     /**
-     * tamaño del plato
+     * tamaño del plato (ALL o HALF)
      */
     private EnumSize size;
 
