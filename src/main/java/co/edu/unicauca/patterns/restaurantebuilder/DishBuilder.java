@@ -162,6 +162,31 @@ public abstract class DishBuilder {
     }
 
     /**
+     * Metodo para calcular el precio de un plato oriental teniendo en
+     * cauenta el número de componentes agregados al plato, su precio unitario y
+     * el tamaño elegido. para calcular el precio del plato en este caso, se
+     * suman el precio de cada uno de los componentes extras más el componente
+     * base, si el usuario eligio en tamaño solo la mitad pues se le cobra la
+     * mitad del valor de cada componente.
+     *
+     * @return
+     */
+    public int calculatePrice() {
+        int price = dish.getBase().getPrecio();
+        int band = price;
+        if (dish.getParts() != null) {
+            for (int i = 0; i < dish.getParts().size(); i++) {
+                price = band + dish.getParts().get(i).getPrecio();
+                band = price;
+            }
+        }
+        if (dish.getSize() == EnumSize.HALF) {
+            price = price / 2;
+        }
+        return price;
+    }
+
+    /**
      * Este método se encarga de validar que un numero que llega por parametro
      * corresponda a las opciones 1 o 2,1 para ALL y 2 para HALF, de lo
      * contrario se vuelve a pedir al usuario que ingrese una opcion correcta.

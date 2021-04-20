@@ -40,18 +40,7 @@ public class OrientalDishBuilder extends DishBuilder {
 
     @Override
     public DishBuilder calculatePriceDish() {
-        int price = dish.getBase().getPrecio();
-        int band = price;
-        if (dish.getParts() != null) {
-            for (int i = 0; i < dish.getParts().size(); i++) {
-                price = band + dish.getParts().get(i).getPrecio();
-                band = price;
-            }
-        }
-        if (dish.getSize() == EnumSize.HALF) {
-            price = price / 2;
-        }
-        dish.setPrice(price);
+        dish.setPrice(calculatePrice());
 
         return this;
     }
