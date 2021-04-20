@@ -105,7 +105,7 @@ public abstract class DishBuilder {
 
     /**
      * Este metodo se encarga de agregar los componentes extras a un plato, el
-     * usuario puede agregar varios por lo que se guardan en una lista de
+     * usuario puede agregar varios, por lo que se guardan en una lista de
      * componentes.
      *
      * @return una lista de componentes
