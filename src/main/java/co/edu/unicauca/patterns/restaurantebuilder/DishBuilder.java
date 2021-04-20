@@ -62,6 +62,12 @@ public abstract class DishBuilder {
      */
     public abstract DishBuilder calculatePriceDish();
 
+    /**
+     * Metodo read para leer una cadena de texto ingresada por el usuario.
+     *
+     * @param message
+     * @return
+     */
     public String read(String message) {
         String input = "";
         try {
